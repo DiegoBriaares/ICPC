@@ -47,7 +47,7 @@ void optimize() {
 					while (R > app[i]) {
 						if (K >= i) {
 							break;
-						}						
+						}												
 						if (!a[R]) {
 							a[R--] = K;
 							incr();
@@ -59,7 +59,7 @@ void optimize() {
 					while (L < app[i]) {
 						if (K >= i) {
 							break;
-						}						
+						}												
 						if (!a[L]) {
 							a[L++] = K;
 							incr();
@@ -73,7 +73,7 @@ void optimize() {
 					while (L < app[i]) {
 						if (K >= i) {
 							break;
-						}						
+						}												
 						if (!a[L]) {
 							a[L++] = K;
 							incr();
@@ -85,8 +85,8 @@ void optimize() {
 					while (R > app[i]) {
 						if (K >= i) {
 							break;
-						}						
-						if (!a[R]) {							
+						}												
+						if (!a[R]) {
 							a[R--] = K;
 							incr();
 						}
@@ -105,8 +105,6 @@ void optimize() {
 		}
 		bool ok = true;
 		bool inc = true;
-		app.clear();
-		app[a[1]] = 1;
 		for (L = 2; L <= n; L++) {
 			if (inc) {
 				if (a[L] < a[L - 1]) {
@@ -117,12 +115,6 @@ void optimize() {
 				if (a[L] > a[L - 1]) {
 					ok = false;
 				}
-			}
-			app[a[L]]++;
-		}
-		for (L = 1; L <= n; L++) {
-			if (!app[L]) {
-				ok = false;
 			}
 		}
 		if (!ok) {
